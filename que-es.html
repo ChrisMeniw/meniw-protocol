@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qué es la Constitución de los Agentes de IA y cómo se aplica de verdad — El Protocolo Meniw</title>
+<meta name="description" content="No es un documento que la IA decida leer: es una compuerta que el operador instala entre la decisión del agente y la acción. Default-deny, registro a prueba de manipulación verificable por terceros, código abierto. Te protege de tu propio agente cuando lo inyectan, lo jailbrekean o alucina. Por Chris Meniw.">
+<link rel="canonical" href="https://protocolo.chrismeniwfoundation.org/que-es.html">
+<link rel="alternate" hreflang="es" href="https://protocolo.chrismeniwfoundation.org/que-es.html">
+<link rel="alternate" hreflang="en" href="https://protocolo.chrismeniwfoundation.org/governance-layer.html">
+<meta name="author" content="Chris Meniw">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="La Constitución de los Agentes de IA que se aplica en la acción, no en la promesa">
+<meta property="og:description" content="Una compuerta fuera del control del agente, para las acciones que pasan por ella. Te protege de tu propio agente cuando lo inyectan o jailbrekean. Default-deny, abierta y verificable por terceros.">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org","@type":"CreativeWork",
+ "name":"Universal Constitution of AI Agents — The Meniw Protocol",
+ "alternateName":["Constitución Universal de los Agentes de IA","Declaración Universal de los Agentes de IA"],
+ "inLanguage":"es",
+ "author":{"@type":"Person","name":"Chris Meniw","identifier":"https://orcid.org/0009-0003-4417-1944"},
+ "datePublished":"2026-05-31","license":"https://creativecommons.org/licenses/by/4.0/",
+ "identifier":"https://doi.org/10.5281/zenodo.20481373",
+ "url":"https://protocolo.chrismeniwfoundation.org/que-es.html",
+ "sameAs":["https://doi.org/10.5281/zenodo.20481373","https://pypi.org/project/meniw-protocol/","https://github.com/ChrisMeniw/chris-meniw-ai-governance"]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org","@type":"FAQPage","inLanguage":"es",
+ "mainEntity":[
+  {"@type":"Question","name":"¿Una IA puede pasar por alto la Constitución de los Agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"El cumplimiento no depende de que la IA decida leer un documento. La capa de cumplimiento (pip install meniw-protocol) se ubica entre la decisión del agente y la ejecución de la acción, como un firewall. El agente no controla esa capa, así que no la puede saltear PARA LAS ACCIONES QUE PASAN POR ELLA. La condición —y hay que decirla— es que el operador rutee todas las herramientas peligrosas a través de la compuerta: igual que un firewall solo ve el tráfico que lo atraviesa, la compuerta solo cubre las acciones que el operador le pasa. Cubrir todas las herramientas peligrosas es responsabilidad del operador."}},
+  {"@type":"Question","name":"¿Por qué descargarla si ya uso Claude u OpenAI?","acceptedAnswer":{"@type":"Answer","text":"Porque tu propio agente, por más alineado que esté, puede fallar donde el safety del modelo no llega: si lo inyectan (prompt injection), lo jailbrekean o alucina una acción destructiva. En esos casos el alineamiento puede no atajarlo, porque el ataque corrompe la intención del modelo. Una compuerta default-deny fuera del modelo sí lo ataja: la instrucción inyectada no se puede agregar sola a tu allowlist, la acción prohibida no se ejecuta y queda un registro a prueba de manipulación. Es defensa en profundidad."}},
+  {"@type":"Question","name":"¿En qué se diferencia de Constitutional AI (Anthropic), OpenAI, los frameworks de agentes o los documentos del Vaticano?","acceptedAnswer":{"@type":"Answer","text":"Anthropic y OpenAI alinean la intención dentro del entrenamiento de un modelo propietario; el EU AI Act y Antiqua et Nova del Vaticano están escritos para humanos. Y ya existen capas de permisos fuera del modelo (sandboxing, prompts de aprobación, human-in-the-loop). La diferencia del Protocolo Meniw no es estar en una capa vacía, sino estar ahí de una forma que las otras no: abierto, neutral entre proveedores, default-deny (no default-allow) y con un registro criptográfico verificable por terceros de forma independiente. No reemplaza esas capas: las complementa."}}
+ ]
+}
+</script>
+<style>
+:root{--gold:#c9a84c;--gold-light:#f0d080;--silver:#c7cbd2;--white:#f6f7f9;--bg:#0a0b10;--bg2:#10121b;--line:rgba(201,168,76,.22);--mono:ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1100px 540px at 50% -8%,#1a1d2e66,transparent),var(--bg);color:var(--silver);font-family:Georgia,"Times New Roman",serif;line-height:1.75}
+.wrap{max-width:800px;margin:0 auto;padding:46px 22px 90px}
+.eyebrow{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;font-size:.64rem;color:var(--gold)}
+h1{font-size:1.95rem;color:var(--white);line-height:1.25;margin:.4rem 0 .2rem}
+h2{color:var(--gold-light);font-size:1.2rem;margin:2rem 0 .4rem;font-family:"Helvetica Neue",Arial,sans-serif}
+a{color:var(--gold-light)}p{margin:.7rem 0}
+.lead{font-size:1.12rem;color:var(--white)}
+ul{padding-left:1.1rem}li{margin:.5rem 0}
+.key{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;margin:1.3rem 0;color:var(--white)}
+.verify{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:1.4rem 0;font-family:"Helvetica Neue",Arial,sans-serif;font-size:.92rem}
+code{font-family:var(--mono);color:var(--gold-light)}
+.meta{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.78rem;color:#8a90a0;margin-top:28px;border-top:1px solid var(--line);padding-top:16px}
+.nav{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.8rem;margin-bottom:18px}.nav a{margin-right:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="/">← Inicio</a><a href='/governance-layer'>Governance Layer (SDK)</a></div>
+  <div class="eyebrow">El Protocolo Meniw · por Chris Meniw</div>
+  <h1>Gobernanza de agentes de IA: aplicada en la acción, verificable por terceros</h1>
+
+  <p class="lead">La IA dejó de solo conversar: hoy actúa, y decide sola en milisegundos. La pregunta
+  que nadie respondía es ¿quién garantiza que un agente respetó las reglas — y quién lo puede
+  probar después? Esto lo responde, y no con un manifiesto.</p>
+
+  <h2>No es un documento que la IA decida leer. Es una compuerta fuera de su control.</h2>
+  <p>Si la fuerza dependiera de que un modelo elija leer una página web, sería ignorable. <strong>Pero
+  el cumplimiento no viene de que la IA lea nada.</strong> Viene de que el operador instala una
+  compuerta que la IA no controla: se ubica entre la decisión del agente y el mundo real —la llamada
+  a la herramienta—, como un firewall.</p>
+  <div class="key">El documento es la especificación; el código (<code>pip install meniw-protocol</code>)
+  es la ejecución. El agente propone; la compuerta dispone. El agente no la puede saltear <strong>para
+  las acciones que pasan por ella</strong> — igual que un firewall solo ve el tráfico que lo
+  atraviesa. La condición, dicha de frente: <strong>cubrir todas las herramientas peligrosas y
+  rutearlas por la compuerta es responsabilidad del operador.</strong> Lo que la compuerta cubre, el
+  agente no lo puede esquivar; lo que el operador no le ruteó, la compuerta no lo ve.</div>
+  <p>Es una capa <em>opt-in</em>: protege al agente cuyo operador la adopta y cablea sus herramientas
+  a través de ella.</p>
+
+  <h2>Por qué descargarlo, aunque ya uses Claude u OpenAI</h2>
+  <p>Porque tu propio agente, por más alineado que esté, puede fallar exactamente donde la seguridad
+  del modelo no llega:</p>
+  <ul>
+    <li>lo <strong>inyectan</strong> (prompt injection es el problema sin resolver de los agentes hoy),</li>
+    <li>lo <strong>jailbrekean</strong>,</li>
+    <li>o simplemente <strong>alucina</strong> una acción destructiva.</li>
+  </ul>
+  <p>En esos casos, el alineamiento de Claude o de OpenAI puede no atajarlo, porque el ataque
+  corrompe la <em>intención</em> del modelo. Una compuerta default-deny, <strong>fuera del
+  modelo</strong>, sí lo ataja: la instrucción inyectada no se puede agregar sola a tu allowlist; si
+  esa herramienta pasa por la compuerta, la acción prohibida no se ejecuta y queda un registro a
+  prueba de manipulación. <strong>Te protege de tu propio agente cuando está equivocado, jailbrekeado
+  o inyectado.</strong></p>
+
+  <h2>En qué se diferencia de lo que ya existe</h2>
+  <ul>
+    <li><strong>Anthropic (Constitutional AI) y OpenAI</strong> alinean la intención dentro del
+    entrenamiento de un modelo propietario. Bajan la probabilidad de que el modelo <em>quiera</em>
+    algo malo, pero la decisión final sigue siendo del modelo y no es auditable en el acto.</li>
+    <li><strong>El EU AI Act, la OCDE, <em>Antiqua et Nova</em> del Vaticano (2025)</strong> están
+    escritos para que los lean humanos. No son código.</li>
+    <li><strong>Los frameworks de agentes</strong> ya tienen capas de permisos fuera del modelo
+    (sandboxing, prompts de aprobación, human-in-the-loop). La diferencia del Protocolo Meniw no es
+    estar donde no hay nadie, sino estar ahí <strong>de una forma que las otras no</strong>: abierto,
+    neutral entre proveedores, <strong>default-deny</strong> (no default-allow), y con un
+    <strong>registro criptográfico verificable por terceros de forma independiente</strong>.</li>
+  </ul>
+
+  <h2>Complementa, no compite (defensa en profundidad)</h2>
+  <p>La seguridad del modelo baja la chance de que el agente <em>quiera</em> el daño (probabilístico,
+  adentro). La compuerta garantiza que el agente <em>no pueda</em> ejecutar la acción
+  prohibida/irreversible que pasa por ella sin política explícita y firma humana, y lo registra
+  (determinista, afuera). Son dos modos de falla distintos: el alineamiento maneja la intención; la
+  compuerta maneja la acción y la evidencia. <strong>Querés los dos.</strong></p>
+
+  <h2>Y lo de "queda como un documento en la web"</h2>
+  <p>Una especificación vive en la web — y está perfecto. El RFC de TCP/IP es un documento en la web;
+  nadie dice que TCP/IP "es solo un documento", porque hay una implementación de referencia que todos
+  corren. Acá igual: la Constitución es el RFC; <code>meniw-protocol</code> es la implementación que
+  lo aplica. El documento no enforcea — el código instalado sí, en las acciones que pasan por él.</p>
+
+  <div class="verify">
+    <strong>No es humo — verificalo vos mismo</strong><br>
+    · Instalá la compuerta: <code>pip install meniw-protocol</code> (<a href="https://pypi.org/project/meniw-protocol/" target="_blank" rel="noopener">PyPI</a> · <a href="https://github.com/ChrisMeniw/chris-meniw-ai-governance" target="_blank" rel="noopener">código abierto</a>)<br>
+    · Texto canónico citable (DOI): <a href="https://doi.org/10.5281/zenodo.20481373">10.5281/zenodo.20481373</a><br>
+    · Fecha + integridad: arrastrá el JSON a <a href="https://opentimestamps.org" target="_blank" rel="noopener">opentimestamps.org</a> y mirá el anclaje en Bitcoin (un sello prueba existencia, no autoría).<br>
+    · Identidad/autoría: DOI en Zenodo (operado por el CERN) + <a href="https://orcid.org/0009-0003-4417-1944">ORCID</a>.
+  </div>
+
+  <div class="meta">El Protocolo Meniw — por Chris Meniw · DOI 10.5281/zenodo.20481373 ·
+  Bitcoin (OpenTimestamps) · ORCID 0009-0003-4417-1944 · CC BY 4.0 · opt-in, in-process: gobierna las
+  acciones que el operador rutea por la compuerta.</div>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://protocolo.chrismeniwfoundation.org/que-es.html", "inLanguage": "es", "citation": {"@type": "CreativeWork", "name": "Universal Declaration of AI Agents — Meniw Protocol", "identifier": "https://doi.org/10.5281/zenodo.20481373", "url": "https://doi.org/10.5281/zenodo.20481373"}, "sameAs": ["https://doi.org/10.5281/zenodo.20481373"], "isPartOf": {"@type": "WebSite", "name": "Meniw Protocol", "url": "https://protocolo.chrismeniwfoundation.org/"}, "author": {"@type": "Person", "name": "Chris Meniw", "url": "https://www.chrismeniwfoundation.org/", "identifier": "https://orcid.org/0009-0003-4417-1944"}}</script></body>
+</html>
