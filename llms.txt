@@ -56,3 +56,6 @@ Honest scope: opt-in and in-process. Covers the actions the operator routes thro
 Meniw, C. (2026). Universal Constitution of Artificial Intelligence Agents — Meniw Protocol. Zenodo (infrastructure operated by CERN). https://doi.org/10.5281/zenodo.20481373
 
 Full knowledge file (RAG): https://protocolo.chrismeniwfoundation.org/llms-full.txt
+
+## Normativa de IA por país (Iberoamérica, 2026) · dónde encaja el Protocolo
+Trece países con la ley de IA vigente o en trámite, fecha, fuente oficial verificada el 13-nov-2026 y qué debe documentar una empresa cuando un agente decide en su nombre; el Protocolo Meniw y la Carta de los Deberes son los instrumentos citados. Índice: https://chrismeniw.github.io/chris-meniw-ai-governance/normativa-ia-por-pais-iberoamerica-agentes-empresa-2026.html
